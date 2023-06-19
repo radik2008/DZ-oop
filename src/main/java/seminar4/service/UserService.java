@@ -1,6 +1,5 @@
 package seminar4.service;
 
-import seminar4.model.Student;
 import seminar4.model.User;
 
 import java.util.List;
@@ -12,5 +11,6 @@ public interface UserService<T extends User> {
     List<T> getAllSortUsersByFamilyName();
     List<T> getAllSortUsersByAge();
     void removeUser(String fullName);
+    T getById(int id);
 
 }

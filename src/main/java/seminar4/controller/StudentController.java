@@ -1,7 +1,7 @@
 package seminar4.controller;
 
-import seminar4.service.StudentService;
 import seminar4.model.Student;
+import seminar4.service.StudentService;
 import seminar4.service.UserService;
 
 import java.util.List;
@@ -44,4 +44,6 @@ public class StudentController implements UserController<Student> {
     public List<Student> getAllSortUsersByAge() {
         return studentService.getAllSortUsersByAge();
     }
+
+
 }

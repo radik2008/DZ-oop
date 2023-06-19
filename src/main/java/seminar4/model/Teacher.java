@@ -2,8 +2,11 @@ package seminar4.model;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.Setter;
+
 @EqualsAndHashCode(callSuper = true)
 @Getter
+@Setter
 public class Teacher extends User {
 
     private String sciense;
@@ -12,4 +15,6 @@ public class Teacher extends User {
         super(id, fullName, age, phoneNumber);
         this.sciense = sciense;
     }
+
+
 }

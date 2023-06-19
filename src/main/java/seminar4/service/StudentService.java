@@ -63,4 +63,11 @@ public class StudentService implements UserService<Student> {
     public void removeUser(String fullName) {
         studentRepository.remove(fullName);
     }
+
+    @Override
+    public Student getById(int id) {
+        return studentRepository.getById(id);
+    }
+
+
 }

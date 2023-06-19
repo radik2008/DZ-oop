@@ -1,13 +1,10 @@
 package seminar4.service;
 
-import seminar4.model.Student;
-import seminar4.model.Teacher;
 import seminar4.model.Teacher;
 import seminar4.model.User;
 import seminar4.repository.TeacherRepository;
 import seminar4.repository.UserRepository;
 
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
@@ -63,5 +60,10 @@ public class TeacherService implements UserService<Teacher> {
     @Override
     public void removeUser(String fullName) {
         teacherRepository.remove(fullName);
+    }
+
+    @Override
+    public Teacher getById(int id) {
+        return teacherRepository.getById(id);
     }
 }

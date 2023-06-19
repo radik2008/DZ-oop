@@ -4,8 +4,8 @@ import lombok.*;
 
 @Getter
 //@AllArgsConstructor
-//@Setter
-//@ToString
+@Setter
+@ToString
 @EqualsAndHashCode(callSuper = true)
 //@Data
 public class Student extends User implements Comparable<Student> {
@@ -25,4 +25,6 @@ public class Student extends User implements Comparable<Student> {
     public String toString() {
         return String.format("%s\t%s\t%s\t%s", getId(), getFullName(), getAge(), getPhoneNumber());
     }
+
+
 }

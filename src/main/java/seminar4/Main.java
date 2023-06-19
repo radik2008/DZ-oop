@@ -3,16 +3,19 @@ package seminar4;
 import seminar4.controller.StudentController;
 import seminar4.controller.TeacherController;
 import seminar4.model.Student;
-import seminar4.model.StudentGroup;
+import seminar4.model.StudyGroup;
 import seminar4.model.Teacher;
 import seminar4.repository.StudentRepository;
 import seminar4.repository.TeacherRepository;
 import seminar4.service.StudentService;
+import seminar4.service.StudyGroupService;
 import seminar4.service.TeacherService;
 import seminar4.view.SortType;
 import seminar4.view.StudentView;
 import seminar4.view.TeacherView;
-import seminar4.view.UserView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -33,18 +36,28 @@ public class Main {
 
         TeacherView viewTeacher = getTeacherView();
 
-        viewTeacher.create("Мария Ивановна", 18, "02");
-        viewTeacher.create("Наталья Петровна", 19, "03");
-        viewTeacher.create("Иван Василич", 20, "112");
+        viewTeacher.create("Мария Ивановна", 98, "02");
+        viewTeacher.create("Наталья Петровна", 69, "03");
+        viewTeacher.create("Иван Василич", 120, "112");
         viewTeacher.sendOnConsole(SortType.NONE);
-        viewTeacher.create("Ольга Петровна", 19, "911");
-        viewTeacher.create("Алла Николаевна", 17, "01");
+        viewTeacher.create("Ольга Петровна", 129, "911");
+        viewTeacher.create("Алла Николаевна", 117, "01");
         viewTeacher.sendOnConsole(SortType.NONE);
         viewTeacher.sendOnConsole(SortType.NAME);
         viewTeacher.sendOnConsole(SortType.FAMILY);
         viewTeacher.sendOnConsole(SortType.AGE);
 
 
+        List<Student> studentsGroup = new ArrayList<>();
+
+        List<Student> students = new ArrayList<>();
+        students.add(new Student(7, "Ivan", 18));
+        students.add(new Student(8, "Petr", 19));
+        students.add(new Student(9, "Sidor", 20));
+
+        StudyGroupService studyGroupService = new StudyGroupService();
+        Teacher teacher = new Teacher(1, "Maria Ivanovna", 98, "02");
+        StudyGroup studyGroup = studyGroupService.createStudyGroup(teacher, students);
 
     }
 
